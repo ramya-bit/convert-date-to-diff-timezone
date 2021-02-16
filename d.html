@@ -1,0 +1,20 @@
+<html>
+<head>
+<script language="JavaScript">
+function calcTime(city, offset) {
+
+    d = new Date();
+    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    nd = new Date(utc + (3600000*offset));
+    return "The local time in " + city + " is " + nd.toLocaleString();
+}
+</script>
+</head>
+<body>
+<button onclick="alert(calcTime('Bombay', '+5.5'))">Mumbai</button>
+<button onclick="alert(calcTime('Singapore', '+8'))">Singapore</button>
+<button onclick="alert(calcTime('London', '+1'))">London</button>
+<button onclick="alert(calcTime('France', '+2'))">France</button>
+<button onclick="alert(calcTime('Japan', '+9'))">Japan</button>
+</body>
+</html>
